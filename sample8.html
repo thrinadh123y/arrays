@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+       <tr>
+           <th>First Name</th>
+           <th>Last Name</th>
+       </tr>
+       <tbody id="myTable">
+
+       </tbody>
+    </table>
+    <script>
+        var users = [
+    {
+        "fname": "Laurence",
+        "lname": "Logue"
+    },
+    {
+        "fname": "Edith",
+        "lname": "Peltier"
+    },
+    {
+        "fname": "Alisa",
+        "lname": "Wells"
+    },
+    {
+        "fname": "Nakesha",
+        "lname": "Josey"
+    },
+    {
+        "fname": "Zachary",
+        "lname": "Widenmier"
+    }
+]
+
+for(i=0;i<users.length;i++){
+    var tr = document.createElement('tr')
+    var td1=document.createElement('td')
+    td1.innerHTML=users[i].fname
+    var td2 = document.createElement('td')
+    td2.innerHTML=users[i].lname
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    document.getElementById("myTable").appendChild(tr)
+}
+    </script>
+</body>
+</html>

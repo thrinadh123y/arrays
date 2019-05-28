@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #main{
+        width: 100%;
+        height: 150px;
+        background-color: lightgrey
+    }
+    button {
+    margin-top: 60px;
+    padding: 10px;
+    background-color: cadetblue;
+    margin-left: 10px;
+}
+   button:hover{
+    background-color: lightslategray;
+}
+div#values {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="buttons">
+            <button onclick="allnames()">See Names</button>
+            <button onclick="unshift()">Add Names at top</button>
+            <button onclick="push()">Add Names at end</button>
+            <button onclick="splice()">Add Names at Middle</button>
+            <button onclick="shift()">Remove Names at Start</button>
+            <button onclick="pop()">Remove Names at End</button>
+            <button onclick="splice2()">Remove Names in Middle</button>
+            <button onclick="sort()">Sort</button>
+            <button onclick="reverse()">Reverse</button>
+        </div>
+    </div>
+    <div id="values"></div>
+    <script>
+    var names=["Thrinadh","Sai","Chinni","Ravi","Gopi"]
+    function allnames(){
+        var empty="";
+        for(i=0;i<names.length;i++){
+            empty=empty+names[i]+"<br>"
+        }
+        document.getElementById('values').innerHTML=empty
+    }
+    function sort(){
+        names.sort();
+        var allName ="";
+    for(i=0;i<names.length;i++){
+        allName = allName+names[i]+"<br>"
+    }
+    document.getElementById('values').innerHTML= names;
+
+    }
+    function reverse(){
+        names.reverse();
+        document.getElementById("values").innerHTML=names;
+    }
+    function push(){
+        names.push("Yoga","Mahesh","Pavan");
+        document.getElementById("values").innerHTML=names;
+    }
+    function unshift(){
+        names.unshift("Baby");
+        document.getElementById("values").innerHTML=names;
+    }
+    function splice(){
+        names.splice(names.length/2,0,"Doll");
+        document.getElementById("values").innerHTML=names;
+    }
+    function pop(){
+        names.pop("Yoga","Mahesh","Pavan");
+        document.getElementById("values").innerHTML=names;
+    }
+    function shift(){
+        names.shift("Baby");
+        document.getElementById("values").innerHTML=names;
+    }
+    function splice2(){
+        names.splice(names.length/2,1);
+        document.getElementById("values").innerHTML=names;
+    }
+    </script>
+</body>
+</html>
